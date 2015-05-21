@@ -1,0 +1,73 @@
+@font-face{
+  font-family: codeBold;
+  src: url("/fonts/CODE Bold.otf");
+}
+input{
+  font-weight: bold;
+  color:white;
+  background: none;
+}
+
+input.submit{
+  border-style:ridge;
+  border-color:white;
+  border-radius: 25px;
+}
+
+
+input.text{
+    color: black;
+    text-decoration: none;
+    border-style:none;
+    background:#FFFFFF;
+    font-weight: normal;
+}
+
+
+
+div.inputDiv{
+  text-align:center;
+}
+
+div.textbox{
+  float:right;
+  display:inline-block;
+  margin-left: 20px;
+
+}
+
+
+fieldset{
+  border-style:dotted;
+  border-color:white;
+  background: rgba(255,255,255,0.1);
+  display:inline-block;
+
+}
+
+div.formdiv{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -220px;
+  margin-left: -200px;
+  display:block;
+}
+
+label{
+    font-weight: bold;
+    color: white;
+    text-align:left;
+    text-decoration: none;
+    font-family: codeBold;
+}
+
+
+legend{
+  font-weight: bold;
+  color:white;
+  background: none;
+  text-align:center;
+  border: none;
+  font-family:codeBold;
+}

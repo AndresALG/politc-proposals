@@ -1,0 +1,41 @@
+
+@font-face{
+  font-family: codeBold;
+  src: url("/fonts/CODE Bold.otf");
+}
+
+
+.navigationBar {
+  z-index: 2;
+  float:right;
+  margin-right: 50px;
+  position:static;
+}
+
+div.titleDiv {
+  z-index: 2;
+  float:left;
+  position:static;
+  margin-left: 50px;
+}
+
+div.topbar {
+  z-index: -2;
+  background-color: white;
+  overflow: auto;
+  position: static;
+}
+
+div.container{
+  position: absolute;
+  top:0px;
+  left: 0px;
+  right: 0px;
+  overflow: auto;
+}
+li {
+  white-space:nowrap;
+  float: right;
+  list-style: none;
+  margin:10px;
+}

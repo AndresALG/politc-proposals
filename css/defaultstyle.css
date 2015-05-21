@@ -1,0 +1,32 @@
+@font-face{
+  font-family: codeBold;
+  src: url("/fonts/CODE Bold.otf");
+}
+
+body{
+  background-image: url("/images/denim.png");
+  overflow:auto;
+}
+a:link, a:visited {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  color: #354050;
+  text-align: center;
+  text-decoration: none;
+  font-family:codeBold;
+}
+
+p{
+    font-weight: bold;
+    color: #354050;
+    text-align:center;
+    text-decoration: none;
+    margin-right:10px;
+    padding:1.5px;
+    font-family: codeBold;
+}
+
+a:hover, a:active{
+    background-color: rgba(53,64,80,0.1);
+}
