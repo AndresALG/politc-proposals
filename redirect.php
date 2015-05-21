@@ -2,7 +2,7 @@
   <HEAD>
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
     <link href="css/defaultstyle.css" type="text/css" rel="stylesheet"/>
-    <ling href="css/stylesheet.css" type="text/css" rel="stylesheet"/>
+    <link href="css/stylesheet.css" type="text/css" rel="stylesheet"/>
     <?php
     session_start();
     include "php/Connection.php";
@@ -25,7 +25,7 @@
       $_SESSION["logged"] = true;
       $_SESSION["user"] = $user;
       $_SESSION["admin"] = false;
-      echo "<p> Benvenuto '$user' ti stiamo rispedendo alla home page</p><p> se non vuoi attendere oltre premi <a href=\"homepage.php\"> qui </a> </p>";
+      echo "<p class=\"white-p\"> Benvenuto '$user' ti stiamo rispedendo alla home page</p><p class=\"white-p\"> se non vuoi attendere oltre premi <a class=\"white-a\" href=\"homepage.php\"> qui </a> </p>";
       header("refresh:5,url=homepage.php");
 
     }
@@ -35,13 +35,13 @@
       $_SESSION["logged"] = true;
       $_SESSION["user"] = $user;
       $_SESSION["admin"] = true;
-      echo "<p> Benvenuto admin '$user' ti stiamo rispedendo alla home page </p><p> se non vuoi attendere oltre premi  <a href=\"homepage.php\"> qui </a></p> ";
+      echo "<p class=\"white-p\"> Benvenuto admin '$user' ti stiamo rispedendo alla home page </p><p> se non vuoi attendere oltre premi  <a class=\"white-a\" href=\"homepage.php\"> qui </a></p> ";
       header("refresh:5,url=homepage.php");
 
     }
 
     else
-    echo "<p>Utente non trovato, username o password errate la preghiamo di riprovare. </p><p> Altrimenti può registrarsi   <a href=\"registrati.php\">qui </a> </p>";
+    echo "<p class=\"white-p\">Utente non trovato, username o password errate la preghiamo di riprovare. </p><p class=\"white-p\"> Altrimenti può registrarsi   <a class=\"white-a\"href=\"registrati.php\">qui </a> </p>";
 
     $conn->closeConn();
     ?>
