@@ -58,7 +58,7 @@
 
       <div class="list">
         <?php
-          $queryasd = "SELECT * FROM Proposta ORDER BY DataEffProposta";
+          $queryasd = "SELECT * FROM Proposta ORDER BY DataEffProposta DESC";
           $response = mysql_query($queryasd);
           while($row = mysql_fetch_assoc($response))
           //$row = mysql_fetch_assoc($response);
@@ -79,7 +79,7 @@
                         <p class="propose-label">'.$row["DataEffProposta"].'</p>
                       </div>
                       <div class="item-votes">
-                        <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php"> + </a> </p>
+                        <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php?auth='.$row["Autore"].'&title='.$row["Titolo"].'"> + </a> </p>
                       </div>
 
                     </div>

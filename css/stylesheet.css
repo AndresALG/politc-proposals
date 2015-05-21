@@ -82,7 +82,7 @@ div.footer{
   position: relative;
   clear:both;
   height:25px;
-  
+
   margin-top:100px;
 }
 
@@ -159,4 +159,17 @@ a.item-link:visited,a.item-link:link,p.item{
   text-decoration: none;
   font-family:codeBold;
   display: inline-block;
+}
+
+div.advise{
+  position: relative;
+  margin: 50px;
+}
+
+p.white-p,a.white-a:link,a.white-a:visited{
+  color:white;
+
+}
+a.white-a:link,a.white-a:visited{
+  text-decoration: underline;
 }
