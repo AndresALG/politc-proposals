@@ -1,21 +1,31 @@
 <HTML>
   <HEAD>
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
     <link href="css/defaultstyle.css" type="text/css" rel="stylesheet">
     <?php
     include "php/Sender.php";
-    include "php/Connection.php";
     session_start();
     date_default_timezone_set('UTC');
     $title = $_POST["title"];
     $propose = $_POST["proposta"];
+    $category = $_POST["category"];
     $user = $_SESSION["user"];
-    $date = date('d-m-Y');
     $adminemail = "loaizaandres96@gmail.com";
     $subject ="Propose from ".$user;
     $date = date('m-d-Y'); //mounth day year;
-    $message = "titolo: ".$title."\n Autore: ".$user."\n Proposta: \r\n".$propose."\n Data:".$date;
+    $message = "titolo: ".$title."\nAutore: ".$user."\nProposta:\n".$propose."\nCategoria: ".$category."\nData: ".$date;
     $sender = new Sender();
     ?>
+
+    <style>
+    p,a:visited{
+      color: white;
+    }
+    a:visited,a:link {
+      display: inline;
+    }
+
+    </style>
   </HEAD>
 
   <BODY>
@@ -27,7 +37,6 @@
         echo "<p> Errori durante l'invio per favore rimprova più tardi</p>";
 
         echo "<p> Premi <a href=\"homepage.php\"> qui </a> per tornare alla home page </p>";
-        header("refresh:5, url=homepage.php");
     ?>
 
 

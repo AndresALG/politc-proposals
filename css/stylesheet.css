@@ -3,9 +3,24 @@
   font-family: codeBold;
   src: url("/fonts/CODE Bold.otf");
 }
+@font-face{
+  font-family: textAreaFont;
+  src: url("/fonts/latin.otf");
+}
+html{
+  height: 100%;
+}
+div.container{
+  position: fixed;
+  top:0px;
+  left: 0px;
+  right: 0px;
+  bottom:0px;
+  overflow: auto;
+  clear: both;
+}
 
-
-.navigationBar {
+ul.navigatorBar {
   z-index: 2;
   float:right;
   margin-right: 50px;
@@ -26,16 +41,122 @@ div.topbar {
   position: static;
 }
 
-div.container{
-  position: absolute;
-  top:0px;
-  left: 0px;
-  right: 0px;
+div.propose-container{
+  margin-left: 100px;
+  position: relative;
   overflow: auto;
 }
+
 li {
   white-space:nowrap;
   float: right;
   list-style: none;
   margin:10px;
+}
+li.list-navigation-elements{
+  white-space: nowrap;
+  float: left;
+  list-style: none;
+  margin-left: 50px;
+}
+a.n-element:link, a.n-element:visited,a.select-element:link,a.select-element:visited {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-family:codeBold;
+}
+
+a.select-element:link{
+  padding-bottom: 5px;
+  border-bottom: 1px;
+  border-bottom-style: groove;
+  border-color: white;
+}
+
+
+div.footer{
+  background-color: white;
+  position: relative;
+  clear:both;
+  height:25px;
+  
+  margin-top:100px;
+}
+
+p.footer-paragraph{
+  text-align: left;
+  margin: 2px;
+  margin-left: 25px;
+}
+
+div.list{
+  position: relative;
+  overflow: auto;
+  clear: both;
+  margin-left: 50px;
+  margin-top: 100px;
+  display: block;
+
+
+}
+div.list-item{
+  position: relative;
+  overflow: auto;
+  background-color: white;
+  width: 600px;
+  margin-bottom: 20px;
+}
+div.title-item {
+  height: 55px;
+  position: relative;
+  border:5px;
+  border-color: #354050;
+  border-style: none none solid none;
+
+}
+div.title-propose , div.item-date{
+  float: left;
+}
+
+div.author-propose, div.item-votes{
+  margin-left: 100px;
+  float: right;
+}
+
+div.item-votes{
+  display: inline-block;
+}
+
+div.propose{
+  position: relative;
+  clear: both;
+  border:5px;
+  border-color: #354050;
+  border-style: none none solid none;
+}
+
+p.propose-textarea{
+  text-align: left;
+  margin: 10px;
+  display: inline-block;
+  font-family: textAreaFont;
+}
+
+p.propose-label{
+  text-align: left;
+  margin: 10px;
+  display: inline-block;
+}
+
+a.item-link:visited,a.item-link:link,p.item{
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+  font-family:codeBold;
+  display: inline-block;
 }

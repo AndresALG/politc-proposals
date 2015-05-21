@@ -1,6 +1,8 @@
 <HTML>
   <HEAD>
-    <link href="css/defaultstyle.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
+    <link href="css/defaultstyle.css" type="text/css" rel="stylesheet"/>
+    <ling href="css/stylesheet.css" type="text/css" rel="stylesheet"/>
     <?php
     session_start();
     include "php/Connection.php";
@@ -14,14 +16,6 @@
     $psw = $_POST["pswLog"];
     ?>
 
-    <style>
-    p,a:visited{
-      color: white;
-    }
-    a:visited,a:link {
-      display: inline;
-    }
-    </style>
   </HEAD>
   <BODY>
     <?php
@@ -41,7 +35,7 @@
       $_SESSION["logged"] = true;
       $_SESSION["user"] = $user;
       $_SESSION["admin"] = true;
-      echo "<p> Benvenuto admin '$user' ti stiamo rispedendo alla home page </p><p> se non vuoi attendere oltre premi  href=\"homepage.php\"> qui </a></p> ";
+      echo "<p> Benvenuto admin '$user' ti stiamo rispedendo alla home page </p><p> se non vuoi attendere oltre premi  <a href=\"homepage.php\"> qui </a></p> ";
       header("refresh:5,url=homepage.php");
 
     }

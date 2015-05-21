@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
   <meta charset="utf-8">
   <title>Political Proposals</title>
   <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
@@ -11,9 +12,9 @@
 <body>
   <div class="container">
   <div class="topbar">
-    <ul class="navigationBar">
-      <li><a href="homepage.php">Home page</a></li>
-    </ul>
+    <div class="titleDiv">
+      <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    </div>
   </div>
   <div class="divLogin">
     <form method="POST" action="redirect.php" onsubmit="return controllForm()" id="loginForm" name="mLoginForm">

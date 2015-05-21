@@ -1,6 +1,4 @@
 <?php
-    echo "$aemail $message $subj";
-
 include "php/PHPMailer_5.2.0/class.phpmailer.php";
 
 class Sender {
@@ -27,7 +25,7 @@ class Sender {
     $mail->From = $this->WEBMAIL;
     $mail->FromName = "WEB MASTER";
     $mail->addAddress($aemail);
-    $mail->isHTML(false);
+    $mail->isHTML(true);
     $mail->Subject = $subj;
     $mail->Body = $message;
 

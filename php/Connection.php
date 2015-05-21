@@ -56,15 +56,20 @@ class Registration {
 
 }
 
-class Proposing {
+class Post {
 
-  public function addPropose($autor,$title,$propose,$categoria,$admin,$data) {
+  public function addPropose($author,$title,$proposta,$categoria,$admin,$data) {
+    $QUERY = "INSERT INTO Proposta(Autore,Titolo,Esposizione,Categoria,AdminResponsabile,DataEffProposta) VALUES ('$author','$title','$proposta','$categoria','$admin','$data')";
+    echo $QUERY;
+    $response = mysql_query($QUERY) or die(mysql_error());
 
+    return $response;
   }
 
   public function removerPropose($autor,$title) {
 
   }
+  
 
 }
 

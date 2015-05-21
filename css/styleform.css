@@ -17,10 +17,9 @@ input.submit{
 
 input.text{
     color: black;
-    text-decoration: none;
     border-style:none;
     background:#FFFFFF;
-    font-weight: normal;
+    font-weight: normal; 
 }
 
 

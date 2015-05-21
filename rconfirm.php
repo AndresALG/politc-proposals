@@ -1,5 +1,6 @@
 <HTML>
   <HEAD>
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
     <link href="css/defaultstyle.css" type="text/css" rel="stylesheet">
     <?php
     session_start();
@@ -12,7 +13,7 @@
 
     $username = $_POST["username"];
     $password = $_POST["password"];
-    $pxail = $_POST["pxail"];
+    $email = $_POST["email"];
     $name =  $_POST["nome"];
     $lname = $_POST["cognome"];
     $bdate = $_POST["datan"];
@@ -24,9 +25,9 @@
   <BODY>
 
     <?php
-      if($reg->ControllNewUser($username)){ $reg->AddNewUser($username,$password,$pxail,$name,$lname,$bdate,$pplace);
+      if($reg->ControllNewUser($username)){ $reg->AddNewUser($username,$password,$email,$name,$lname,$bdate,$pplace);
 
-        $QUERY_ADD = "INSERT INTO Utente() VALUES ($username,$password,'$pxail',$name,$lname,$bdate,$pplace)";
+        $QUERY_ADD = "INSERT INTO Utente() VALUES ($username,$password,'$email',$name,$lname,$bdate,$pplace)";
         $_SESSION["logged"] = true;
         $_SESSION["user"] = $username;
         $_SESSION["admin"] = false;

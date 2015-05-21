@@ -8,7 +8,7 @@ body{
   overflow:auto;
 }
 a:link, a:visited {
-  display: block;
+  
   width: 100%;
   font-weight: bold;
   color: #354050;
