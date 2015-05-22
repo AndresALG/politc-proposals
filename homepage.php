@@ -66,7 +66,8 @@
             echo '<div class="list-item">
                     <div class="title-item">
                       <div class="title-propose">
-                      <p class="propose-label">  <a href="propostapage.php" class="item-link">' .$row["Titolo"].'</a></p>
+                      <p class="propose-label">  <a href="propostapage.php?id='.$row["ID"].'"class="item-link">'.$row["Titolo"].'</a></p>
+                      <p class="propose-label">'.$row["Categoria"].'</p>
                       </div>
                       <div class="author-propose"><p class="propose-label">'.$row["Autore"].'</p>
                       </div>

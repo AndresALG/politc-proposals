@@ -15,6 +15,7 @@
   if(!isset($_SESSION["logged"])) {
     $_SESSION["logged"] = false;
   }
+  $id = $_GET["id"];
   ?>
 </head>
 <body>
@@ -23,48 +24,20 @@
       <div class="titleDiv">
         <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
       </div>
-      <ul class="navigatorBar">
-        <?php
-        if(!$_SESSION["logged"]) {
-          echo '<li><a href="informazioni.html">Informazioni</a></li>
-          <li><a href="ricerca.html">Ricerca</a></li>
-          <li><a href="registrati.php">Registrati</a></li>
-          <li><a href="login.php">Login</a></li>';
-        }
-        else if (!$_SESSION["admin"]) {
-          echo '<li><a href="logout.php">Logout</a></li>
-          <li><a href="informazioni.html">Informazioni</a></li>
-          <li><a href="ricerca.html">Ricerca</a></li>
-          <li><a href="createpropose.php">Proponi </a></li>
-          <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
-        }
-        else {
-          echo '<li><a href="logout.php">Logout</a></li>
-          <li><a href="informazioni.html">Informazioni</a></li>
-          <li><a href="ricerca.html">Ricerca</a></li>
-          <li><a href="convalida.php">Convalida proposta </a></li>
-          <li><a href="MyPage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
-        }
-        ?>
-      </ul>
     </div>
     <div class="propose-container">
-      <ul class="navigatorbar-elements">
-        <li class="list-navigation-elements"> <a class="n-element" href="homepage.php"> Home </a></li>
-        <li class="list-navigation-elements"> <a class="select-element" href="tops.php"> Più votate </a></li>
-        <li class="list-navigation-elements"> <a class="n-element" href="category.php">Categorie </a></li>
-      </ul>
+
       <div class="list">
         <?php
-          $queryasd = "SELECT * FROM Proposta ORDER BY Voti DESC";
+          $queryasd = "SELECT * FROM Proposta WHERE ID='$id'";
           $response = mysql_query($queryasd);
           while($row = mysql_fetch_assoc($response))
           //$row = mysql_fetch_assoc($response);
           //for($i=0; $i<10; $i++)
-            echo '<div class="list-item">
+            echo '<div class="own-list-item">
                     <div class="title-item">
                       <div class="title-propose">
-                      <p class="propose-label">  <a href="propostapage.php" class="item-link">' .$row["Titolo"].'</a></p>
+                      <p class="propose-label">'.$row["Titolo"].'</p>
                       <p class="propose-label">'.$row["Categoria"].'</p>
                       </div>
                       <div class="author-propose"><p class="propose-label">'.$row["Autore"].'</p>
@@ -82,14 +55,55 @@
                       </div>
 
                     </div>
-                  </div>'  ;
+                  </div>';
          ?>
       </div>
     </div>
+    <?php
+    $query = "SELECT * FROM Commento WHERE ";
+
+    echo '<div class="comments-container">
+            <div class="list">
+              <div class="own-list-item">
+                <div class="title-item">
+                  <div class="title-comment">
+                    <textarea class="comment-text-area" name="comment" id="comment" cols="72" rows="2" onclick="return removeString()">Inserisci commento</textarea>
+                    <button class="send-comment" onclick="return sendcomment()"> invio </button>
+                  </div>
+                </div>';
+
+    echo      '</div>
+            </div>
+          </div>  '
+     ?>
     <div class="footer">
       <p class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </p>
     </div>
-    </div>
   </div>
+
+  <script >
+    function removeString(){
+      var check = document.getElementById("comment").value;
+      if( check == "Inserisci commento"){
+        document.getElementById("comment").value = "";
+        var utente = <?php echo $_SESSION["user"]; ?>;
+        var commento = document.getElementById('comment');
+        alert(utente);}
+      else {
+        return true;
+      }
+
+    }
+
+    function sendcomment() {
+      var utente = '<?php echo "root"  ?>';
+      var commento = document.getElementById('comment');
+      alert(utente);
+      return false;
+
+    }
+
+
+  </script>
 </body>
 </html>

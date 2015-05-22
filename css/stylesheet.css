@@ -1,4 +1,3 @@
-
 @font-face{
   font-family: codeBold;
   src: url("/fonts/CODE Bold.otf");
@@ -16,8 +15,8 @@ div.container{
   left: 0px;
   right: 0px;
   bottom:0px;
-  overflow: auto;
   clear: both;
+  overflow: auto;
 }
 
 ul.navigatorBar {
@@ -41,10 +40,10 @@ div.topbar {
   position: static;
 }
 
-div.propose-container{
+div.propose-container,div.comments-container {
   margin-left: 100px;
   position: relative;
-  overflow: auto;
+  clear:both;
 }
 
 li {
@@ -82,8 +81,8 @@ div.footer{
   position: relative;
   clear:both;
   height:25px;
-
-  margin-top:100px;
+  margin-top:180px;
+  padding: 2.2em;
 }
 
 p.footer-paragraph{
@@ -94,30 +93,38 @@ p.footer-paragraph{
 
 div.list{
   position: relative;
-  overflow: auto;
   clear: both;
   margin-left: 50px;
   margin-top: 100px;
+  margin-right: 50px;
   display: block;
+
+  border:2px;
+  border-style: dashed;
 
 
 }
-div.list-item{
+div.list-item, div.own-list-item{
   position: relative;
   overflow: auto;
   background-color: white;
   width: 600px;
   margin-bottom: 20px;
 }
+div.own-list-item{
+  position: relative;
+  margin-left: 220px;
+}
 div.title-item {
-  height: 55px;
+  height: 60px;
   position: relative;
   border:5px;
+  padding-bottom: 10px;
   border-color: #354050;
   border-style: none none solid none;
 
 }
-div.title-propose , div.item-date{
+div.title-propose , div.item-date, div.title-comment{
   float: left;
 }
 
@@ -130,7 +137,7 @@ div.item-votes{
   display: inline-block;
 }
 
-div.propose{
+div.propose,div.comment{
   position: relative;
   clear: both;
   border:5px;
@@ -148,7 +155,8 @@ p.propose-textarea{
 p.propose-label{
   text-align: left;
   margin: 10px;
-  display: inline-block;
+  display: block;
+  margin-bottom: 10px;
 }
 
 a.item-link:visited,a.item-link:link,p.item{
@@ -172,4 +180,17 @@ p.white-p,a.white-a:link,a.white-a:visited{
 }
 a.white-a:link,a.white-a:visited{
   text-decoration: underline;
+}
+
+button.send-comment{
+  float:right;
+  margin:2px;
+}
+
+textarea.comment-text-area{
+  border: 2px;
+  width: 99%;
+  margin-top: 5px;
+  resize:none;
+
 }

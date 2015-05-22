@@ -35,7 +35,7 @@
       $_SESSION["logged"] = true;
       $_SESSION["user"] = $user;
       $_SESSION["admin"] = true;
-      echo "<p class=\"white-p\"> Benvenuto admin '$user' ti stiamo rispedendo alla home page </p><p> se non vuoi attendere oltre premi  <a class=\"white-a\" href=\"homepage.php\"> qui </a></p> ";
+      echo "<p class=\"white-p\"> Benvenuto admin '$user' ti stiamo rispedendo alla home page </p><p class=\"white-p\"> se non vuoi attendere oltre premi  <a class=\"white-a\" href=\"homepage.php\"> qui </a></p> ";
       header("refresh:5,url=homepage.php");
 
     }
