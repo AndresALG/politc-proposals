@@ -12,6 +12,7 @@
     $title = $_POST["title"];
     $author = $_POST["author"];
     $date = $_POST["data"];
+    $date = date("Y-m-d H:i:s",strtotime($date));
     $propose = $_POST["proposta"];
     $category = $_POST["category"];
     $user = $_SESSION["user"];
@@ -32,6 +33,8 @@
   <BODY>
 
     <?php
+
+
       if($adder->addPropose($author,$title,$propose,$category,$user,$date))
         echo "<p> Proposta aggiunta!</p>";
       else

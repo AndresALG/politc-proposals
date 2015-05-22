@@ -77,7 +77,7 @@
                     </div>
                     <div class="item-footer">
                       <div class="item-date">
-                        <p class="propose-label">'.$row["DataEffProposta"].'</p>
+                        <p class="propose-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
                       </div>
                       <div class="item-votes">
                         <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php?auth='.$row["Autore"].'&title='.$row["Titolo"].'"> + </a> </p>

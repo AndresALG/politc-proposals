@@ -74,5 +74,19 @@ class Post {
 }
 
 
+class Chooser {
+
+  public function chooseAdminEmail(){
+
+    $qcountAdmins = "SELECT FLOOR(RAND() * COUNT(*)) AS `offset` FROM Admin ";
+    $response = mysql_query($qcountAdmins);
+    $offset_row = mysql_fetch_object( $response );
+    $offset = $offset_row->offset;
+    $result = mysql_query( " SELECT * FROM `Admin` LIMIT $offset, 1 " );
+    $row = mysql_fetch_assoc($result);
+    return $row["Email"];
+  }
+
+}
 
 ?>

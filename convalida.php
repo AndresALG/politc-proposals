@@ -20,7 +20,7 @@
         <fieldset class="fieldstyle"> <legend class="lstyle"> Proposta </legend>
           <div class="title"> <label> Titolo <div class="textbox"> <input type="text" name="title" class="text" > </div></label> </div> <br>
           <div class="title"> <label> Autore <div class="textbox"><input type="text" name="author" class="text"> </div></label> </div> <br>
-          <div class="title"> <label> Data <div class="textbox"><input type="date" name="data" class="text"></div></label> </div>
+          <div class="title"> <label> Data <div class="textbox"><input type="text" name="data" class="text"></div></label> </div>
           <div class="description"> <p class="pstyle"> Descrizione </p> <textarea class="textstyle" name="proposta" rows="15" cols="170"> </textarea></div><br>
           <div > <label> Categoria<select name="category">
                                   <option value="null"> --- </option>

@@ -6,7 +6,10 @@ class Sender {
   private  $WEBMAIL = "webmaster.proposals@gmail.com";
   private  $WEBPSW = "Politicele";
 
-  public function sendEmail($aemail,$message,$subj) {
+  public function sendEmail($aemail,$array,$subj) {
+
+    $message = "<p>Titolo:</p><p> ".$array["Titolo"]."</p> <p>Autore:</p><p> ".$array["Autore"]."</p><p> Proposta:</p><p> ".$array["Proposta"]."</p><p>Categoria:</p><p>".$array["Categoria"]."</p><p>Data:</p><p> ".$array["Data"]."</p>";
+
     $mail = new PHPMailer;
 
     //Set PHPMailer to use SMTP.
