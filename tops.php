@@ -8,9 +8,11 @@
   <link href="css/defaultstyle.css" rel="stylesheet" type="text/css">
   <?php
   include 'php/Connection.php';
+  include 'php/Stringhelper.php';
   $data=new Connection();
   $data->conn();
   $data->selectDB("proposalsDatabase");
+  $string_helper = new StringHelper();
   session_start();
   if(!isset($_SESSION["logged"])) {
     $_SESSION["logged"] = false;
@@ -26,22 +28,16 @@
       <ul class="navigatorBar">
         <?php
         if(!$_SESSION["logged"]) {
-          echo '<li><a href="informazioni.html">Informazioni</a></li>
-          <li><a href="ricerca.html">Ricerca</a></li>
-          <li><a href="registrati.php">Registrati</a></li>
+          echo '<li><a href="registrati.php">Registrati</a></li>
           <li><a href="login.php">Login</a></li>';
         }
         else if (!$_SESSION["admin"]) {
           echo '<li><a href="logout.php">Logout</a></li>
-          <li><a href="informazioni.html">Informazioni</a></li>
-          <li><a href="ricerca.html">Ricerca</a></li>
           <li><a href="createpropose.php">Proponi </a></li>
           <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
         }
         else {
           echo '<li><a href="logout.php">Logout</a></li>
-          <li><a href="informazioni.html">Informazioni</a></li>
-          <li><a href="ricerca.html">Ricerca</a></li>
           <li><a href="convalida.php">Convalida proposta </a></li>
           <li><a href="MyPage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
         }
@@ -54,9 +50,9 @@
         <li class="list-navigation-elements"> <a class="select-element" href="tops.php"> Più votate </a></li>
         <li class="list-navigation-elements"> <a class="n-element" href="category.php">Categorie </a></li>
       </ul>
-      <div class="list">
+      <div class="list-home">
         <?php
-          $queryasd = "SELECT * FROM Proposta ORDER BY Voti DESC";
+          $queryasd = "SELECT * FROM Proposta ORDER BY Voti DESC LIMIT 10";
           $response = mysql_query($queryasd);
           while($row = mysql_fetch_assoc($response))
           //$row = mysql_fetch_assoc($response);
@@ -64,18 +60,18 @@
             echo '<div class="list-item">
                     <div class="title-item">
                       <div class="title-propose">
-                      <p class="propose-label">  <a href="propostapage.php" class="item-link">' .$row["Titolo"].'</a></p>
+                      <p class="propose-label">  <a href="propostapage.php?id='.$row["ID"].'" class="item-link">' .$row["Titolo"].'</a></p>
                       <p class="propose-label">'.$row["Categoria"].'</p>
                       </div>
                       <div class="author-propose"><p class="propose-label">'.$row["Autore"].'</p>
                       </div>
                     </div>
                     <div class="propose">
-                      <p class="propose-textarea" >'.$row["Esposizione"].' </p>
+                      <p class="propose-textarea" >'.$string_helper->deleteText($row["Esposizione"]).' </p>
                     </div>
                     <div class="item-footer">
                       <div class="item-date">
-                        <p class="propose-label">'.$row["DataEffProposta"].'</p>
+                        <p class="propose-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
                       </div>
                       <div class="item-votes">
                         <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php?auth='.$row["Autore"].'&title='.$row["Titolo"].'"> + </a> </p>

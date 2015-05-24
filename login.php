@@ -5,27 +5,30 @@
   <meta charset="utf-8">
   <title>Political Proposals</title>
   <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-  <link href="css/styleLogin.css" rel="stylesheet" type="text/css">
   <link href="css/defaultstyle.css" rel="stylesheet" type="text/css">
   <link href="css/styleform.css" rel="stylesheet" type="text/css">
 </head>
 <body>
   <div class="container">
-  <div class="topbar">
-    <div class="titleDiv">
-      <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    <div class="topbar">
+      <div class="titleDiv">
+        <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+      </div>
     </div>
-  </div>
-  <div class="divLogin">
-    <form method="POST" action="redirect.php" onsubmit="return controllForm()" id="loginForm" name="mLoginForm">
-      <fieldset class="fieldstyle"> <legend>Login</legend>
-        <label>Username <br> <input type="text" name="userLog" id="idUserLog" class="text"> </label> <br> <br>
-        <label>Password <br> <input type="password" name="pswLog" id="idPswLog" class="text"> </label> <br><br>
-        <div class="inputDiv"><input type="submit" value="Invio" name="submit" id="subButton" class="submit"></div>
-      </fieldset>
-    </form>
-  </div>
+    <div class="form-container">
+      <form method="POST" action="redirect.php" onsubmit="return controllForm()" name="mLoginForm" >
+        <label><div class="element-container-header">Login  </div></label>
+        <label><div class="element-container-login">Username <br> <input type="text" name="userLog" id="idUserLog" class="text"> </label> </div>
+        <label><div class="element-container-login">Password <br> <input type="password" name="pswLog" id="idPswLog" class="text"> </label> </div>
+        <div class="element-container-footer"><input type="submit" value="Invio" name="submit" id="subButton" class="submit"> </div>
+      </form>
+    </div>
 
+    <div class="footer">
+      <p class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </p>
+    </div>
+
+  </div>
 
   <script>
   function controllForm() {
@@ -40,6 +43,5 @@
 
   }
   </script>
-</div>
 </body>
 </html>

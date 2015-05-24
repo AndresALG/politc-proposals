@@ -64,7 +64,7 @@
     $query = "SELECT * FROM Commento WHERE IDProposta='$idp' ORDER BY DataEffCommento DESC";
     $responsee = mysql_query($query);
     echo '<div class="comments-container">
-            <div class="list">
+            <div class="list-comments">
               <div class="comment-list-item">
                 <div class="title-item">
                   <div class="title-comment">

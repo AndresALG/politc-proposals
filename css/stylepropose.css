@@ -9,36 +9,11 @@
   src: url("/fonts/latin.otf");
 }
 
-.form-container {
-  position:relative;
-  clear:both;
-  float:left;
-  margin-left: 50px;
-}
 
-.textstyle {
-  font-family:textAreaFont;
-}
 
 h3.hstyle, p.pstyle{
   font-weight: bold;
   color: white;
   font-family:codeBold;
   text-align:left;
-}
-
-legend.lstyle{
-  text-align:right;
-}
-
-input.instyle{
-  border-style:ridge;
-  border-color:#ead722;
-  border-radius: 25px;
-}
-
-div.propose{
-  position: relative;
-  margin-top: 2em;
-
 }

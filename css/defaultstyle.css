@@ -31,7 +31,7 @@ a:hover, a:active{
     background-color: rgba(53,64,80,0.1);
 }
 
-button{
+button,input.submit{
   border: none;
   background: transparent;
   color: #354050;

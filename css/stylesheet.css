@@ -7,7 +7,7 @@
   src: url("/fonts/latin.otf");
 }
 html{
-  height: 100%;
+  height: auto;
 }
 div.container{
   position: fixed;
@@ -38,13 +38,16 @@ div.topbar {
   background-color: white;
   overflow: auto;
   position: static;
+  width: auto;
 }
 
 div.propose-container,div.comments-container {
-  margin-left: 100px;
-  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
   clear:both;
 }
+
 
 li {
   white-space:nowrap;
@@ -91,32 +94,45 @@ p.footer-paragraph{
   margin-left: 25px;
 }
 
-div.list{
+div.list,div.list-home{
   position: relative;
   clear: both;
-  margin-left: 50px;
-  margin-top: 100px;
-  margin-right: 50px;
   display: block;
-
-  border:2px;
-  border-style: dashed;
-
+  margin-left: auto;
+  margin-right: auto;
 
 }
+
+div.list-home{
+  width: 45em;
+}
+
+div.list{
+  margin-top: 5em;
+  width: 800px;
+
+}
+div.list-comments{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+
+  border: 2px;
+  border-style: dashed;
+}
+
 div.list-item, div.own-list-item,div.comment-list-item{
   position: relative;
   overflow: auto;
   background-color: white;
-  width: 600px;
+  width: auto;
   margin-bottom: 20px;
 }
-div.comment-list-item{
-  margin-left: 260px;
-}
+
 div.own-list-item{
   position: relative;
-  width: 100%;
+  width:auto;
 }
 div.title-item ,div.title-item-comment{
   height: 60px;
@@ -139,7 +155,10 @@ div.comment-text{
 div.title-propose , div.item-date, div.title-comment{
   float: left;
 }
-
+div.div.title-comment{
+  border:10px;
+  border-style: solid;
+}
 div.author-propose, div.item-votes,div.date-comment{
   margin-left: 100px;
   float: right;
@@ -207,8 +226,10 @@ button.send-comment{
 
 textarea.comment-textarea{
   border: 2px;
-  width: 99%;
+  border-style: solid;
+  width: auto;
   margin-top: 5px;
+  margin-left: 2px;
   resize:none;
 
 }

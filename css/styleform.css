@@ -2,71 +2,92 @@
   font-family: codeBold;
   src: url("/fonts/CODE Bold.otf");
 }
-input{
-  font-weight: bold;
-  color:white;
-  background: none;
-}
-
-input.submit{
-  border-style:ridge;
-  border-color:white;
-  border-radius: 25px;
-}
-
 
 input.text{
     color: black;
-    border-style:none;
+    border-style:solid;
     background:#FFFFFF;
-    font-weight: normal; 
+    border-color: #354050;
+    font-weight: normal;
+    text-align: center;
 }
 
-
-
-div.inputDiv{
-  text-align:center;
-}
-
-div.textbox{
-  float:right;
-  display:inline-block;
-  margin-left: 20px;
-
-}
-
-
-fieldset{
-  border-style:dotted;
-  border-color:white;
-  background: rgba(255,255,255,0.1);
-  display:inline-block;
-
-}
-
-div.formdiv{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -220px;
-  margin-left: -200px;
-  display:block;
-}
 
 label{
     font-weight: bold;
-    color: white;
-    text-align:left;
+    color: #354050;
     text-decoration: none;
     font-family: codeBold;
 }
 
+div.form-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  width: 30em;
+  background-color: white;
+  margin-bottom: 13.2em;
+}
+div.form-container-proposta{
+  margin: 2.5em 5em;
+  width: 75em;
+  background-color: white;
+}
 
-legend{
-  font-weight: bold;
-  color:white;
-  background: none;
-  text-align:center;
-  border: none;
-  font-family:codeBold;
+div.element-container-login,div.element-container-header,div.element-container-footer{
+  text-align: center;
+  padding: 0.5em;
+}
+
+
+div.element-container-registration,div.element-container-proposta{
+  text-align: left;
+  padding: 0.5em;
+}
+
+div.textbox-registration{
+  float:right;
+  display:inline-block;
+  margin-left: 20px;
+}
+
+div.textbox-proposta{
+  float:none;
+  text-align: left;
+  display: block;
+}
+
+div.element-container-header,div.element-container-footer{
+  border:5px;
+  border-style: none none solid;
+  border-color: #354050;
+}
+
+div.element-container-footer{
+  border:5px;
+  border-style: solid none ;
+  border-color: #354050;
+}
+
+textarea.textstyle {
+  border: 1px;
+  border-style: solid;
+  width: 88em;
+  resize:none;
+  font-family:textAreaFont;
+  border-color: #354050;
+}
+
+select {
+  margin: 50px;
+  border: 1px solid #111;
+  background: transparent;
+  width: 150px;
+  font-size: 16px;
+  font-family: codeBold;
+  color: #354050;
+  border-color: #354050;
+  appearance: none;
+  -webkit-appearance:none;
+  -moz-appearance: none;
 }
