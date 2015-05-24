@@ -60,7 +60,6 @@ class Post {
 
   public function addPropose($author,$title,$proposta,$categoria,$admin,$data) {
     $QUERY = "INSERT INTO Proposta(Autore,Titolo,Esposizione,Categoria,AdminResponsabile,DataEffProposta) VALUES ('$author','$title','$proposta','$categoria','$admin','$data')";
-    echo $QUERY;
     $response = mysql_query($QUERY) or die(mysql_error());
 
     return $response;

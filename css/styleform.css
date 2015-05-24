@@ -1,15 +1,16 @@
-@font-face{
-  font-family: codeBold;
-  src: url("/fonts/CODE Bold.otf");
-}
 
-input.text{
+
+input.text,input.text-proposta{
     color: black;
     border-style:solid;
     background:#FFFFFF;
     border-color: #354050;
     font-weight: normal;
     text-align: center;
+}
+
+input.text-proposta{
+  text-align: left;
 }
 
 
@@ -29,7 +30,7 @@ div.form-container{
   margin-bottom: 13.2em;
 }
 div.form-container-proposta{
-  margin: 2.5em 5em;
+  margin: 2.5em ;
   width: 75em;
   background-color: white;
 }

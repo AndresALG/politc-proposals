@@ -18,9 +18,9 @@
     <div class="form-container-proposta">
       <form  method="post" action="addpropose.php" onsubmit="return controll()" name="form">
         <label><div class="element-container-header">Convalida proposta  </div></label>
-          <label><div class="element-container-proposta"> Titolo <div class="textbox-proposta"> <input type="text" name="title" class="text" > </div></div></label>
-          <label><div class="element-container-proposta"> Autore <div class="textbox-proposta"><input type="text" name="author" class="text"> </div></div></label>
-          <label><div class="element-container-proposta"> Data <div class="textbox-proposta"><input type="text" name="data" class="text"></div></div></label>
+          <label><div class="element-container-proposta"> Titolo <div class="textbox-proposta"> <input type="text" name="title" class="textbox-proposta" > </div></div></label>
+          <label><div class="element-container-proposta"> Autore <div class="textbox-proposta"><input type="text" name="author" class="textbox-proposta"> </div></div></label>
+          <label><div class="element-container-proposta"> Data <div class="textbox-proposta"><input type="text" name="data" class="textbox-proposta"></div></div></label>
           <label><div class="element-container-proposta"> Descrizione <textarea class="textstyle" name="proposta" rows="15"> </textarea></div></label>
           <label><div class="element-container-proposta"> Categoria <select name="category">
                                   <option value="null"> --- </option>

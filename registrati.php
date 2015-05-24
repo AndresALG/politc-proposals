@@ -54,6 +54,12 @@
         <div class="element-container-footer"><input type="submit" value="Registrati" name="submit"  class="submit"></div>
     </form>
   </div>
+  <div class="footer">
+    <div class="footer-container">
+    <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
+    <div class="logo-footer"> <img src="images/logo.png" width="50px" > </div>
+  </div>
+</div>
 </div>
 </body>
 </html>

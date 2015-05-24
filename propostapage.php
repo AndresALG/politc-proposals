@@ -68,7 +68,7 @@
               <div class="comment-list-item">
                 <div class="title-item">
                   <div class="title-comment">
-                    <textarea class="comment-textarea" name="comment" id="comment" cols="72" rows="2" onclick="return removeString()">Inserisci commento</textarea>
+                    <textarea class="comment-textarea" name="comment" id="comment" cols="70" rows="2" onclick="return removeString()">Inserisci commento</textarea>
                     <button class="send-comment" onclick="sendcomment()"> invio </button>
                   </div>
                 </div>';
@@ -92,9 +92,12 @@
             </div>
           </div>  '
      ?>
-    <div class="footer">
-      <p class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </p>
-    </div>
+     <div class="footer">
+       <div class="footer-container">
+       <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
+       <div class="logo-footer"> <img src="images/logo.png" width="50px" > </div>
+     </div>
+   </div>
   </div>
 
   <script >

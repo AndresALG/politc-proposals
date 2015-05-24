@@ -1,10 +1,14 @@
 @font-face{
   font-family: codeBold;
-  src: url("/fonts/CODE Bold.otf");
+  src: url("/fonts/LinLibertine_RB.ttf");
+  font-weight: small;
+  font-style: small;
+  font-size: 2px;
 }
 @font-face{
   font-family: textAreaFont;
-  src: url("/fonts/latin.otf");
+  src: url("/fonts/king.ttf");
+  font-weight: normal;
 }
 html{
   height: auto;
@@ -24,6 +28,13 @@ ul.navigatorBar {
   float:right;
   margin-right: 50px;
   position:static;
+}
+
+div.categories-navigator {
+  display: block;
+  position: relative;
+  clear: both;
+  margin-left: 2em;
 }
 
 div.titleDiv {
@@ -80,18 +91,37 @@ a.select-element:link{
 
 
 div.footer{
-  background-color: white;
   position: relative;
-  clear:both;
-  height:25px;
-  margin-top:180px;
-  padding: 2.2em;
-}
-
-p.footer-paragraph{
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  height: 3em;
+  line-height: 3em;
   text-align: left;
+
+}
+div.footer-container{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  background-color: white;
+}
+div.footer-paragraph{
+  float:left;
   margin: 2px;
   margin-left: 25px;
+  display: inline-block;
+  color: #354050;
+  font-family: codeBold;
+  margin-top: 1.2em;
+}
+
+div.logo-footer{
+  float:right;
+  display: inline-block;
+  margin: 1em;
+  width: auto;
 }
 
 div.list,div.list-home{
@@ -101,6 +131,14 @@ div.list,div.list-home{
   margin-left: auto;
   margin-right: auto;
 
+}
+
+div.personal-list{
+  position: relative;
+  clear: both;
+  width: 50em;
+  margin-left: 5em;
+  margin-top: 5em;
 }
 
 div.list-home{
@@ -227,9 +265,13 @@ button.send-comment{
 textarea.comment-textarea{
   border: 2px;
   border-style: solid;
-  width: auto;
+  width: 40em;
   margin-top: 5px;
   margin-left: 2px;
   resize:none;
+  border-color: #354050;
+  color: #354050;
+  font-size: 0.9em;
+  font-family: textAreaFont;
 
 }

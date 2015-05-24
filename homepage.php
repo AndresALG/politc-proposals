@@ -48,10 +48,10 @@
       </ul>
     </div>
     <div class="propose-container">
-      <ul class="navigatorbar-elements">
+      <ul>
         <li class="list-navigation-elements"> <a class="select-element" href="homepage.php"> Home </a></li>
         <li class="list-navigation-elements"> <a class="n-element" href="tops.php"> Più votate </a></li>
-        <li class="list-navigation-elements"> <a class="n-element" href="category.php">Categorie </a></li>
+        <li class="list-navigation-elements"> <a class="n-element" href="categorie.php">Categorie </a></li>
       </ul>
 
 
@@ -72,14 +72,14 @@
                       </div>
                     </div>
                     <div class="propose">
-                      <p class="propose-textarea" >'.$string_helper->deleteText($row["Esposizione"]).' </p>
+                      <p class="propose-textarea" >'.$string_helper->deleteText($row["Esposizione"],300).' </p>
                     </div>
                     <div class="item-footer">
                       <div class="item-date">
                         <p class="propose-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
                       </div>
                       <div class="item-votes">
-                        <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php?auth='.$row["Autore"].'&title='.$row["Titolo"].'"> + </a> </p>
+                        <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php?ID='.$row["ID"].'"> + </a> </p>
                       </div>
 
                     </div>
@@ -90,8 +90,11 @@
       </div>
     </div>
     <div class="footer">
-      <p class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </p>
+      <div class="footer-container">
+      <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
+      <div class="logo-footer"> <img src="images/logo.png" width="50px" > </div>
     </div>
+  </div>
   </div>
 
 

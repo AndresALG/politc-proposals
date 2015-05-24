@@ -19,6 +19,12 @@
   </HEAD>
   <BODY>
     <?php
+    echo '<div class="container">
+    <div class="topbar">
+    <div class="titleDiv">
+    <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    </div> </div>
+    <div class="advise">';
     //query to search the user in normal users
     if($auth->AuthUser($user,$psw)) {
 
@@ -43,6 +49,7 @@
     else
     echo "<p class=\"white-p\">Utente non trovato, username o password errate la preghiamo di riprovare. </p><p class=\"white-p\"> Altrimenti può registrarsi   <a class=\"white-a\"href=\"registrati.php\">qui </a> </p>";
 
+    echo '</div></div>';
     $conn->closeConn();
     ?>
 

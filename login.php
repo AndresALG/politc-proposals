@@ -25,8 +25,11 @@
     </div>
 
     <div class="footer">
-      <p class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </p>
+      <div class="footer-container">
+      <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
+      <div class="logo-footer"> <img src="images/logo.png" width="50px" > </div>
     </div>
+  </div>
 
   </div>
 

@@ -40,13 +40,21 @@
 
     <?php
 
+    echo '<div class="container">
+    <div class="topbar">
+    <div class="titleDiv">
+    <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    </div> </div>
+    <div class="advise">';
 
       if($sender->sendEmail($adminemail,$arrayMessage,$subject))
-        echo "<p> Proposta inviata con successo !</p>";
+        echo "<p class=\"white-p\"> Proposta inviata con successo !</p>";
       else
-        echo "<p> Errori durante l'invio per favore rimprova più tardi</p>";
+        echo "<p class=\"white-p\"> Errori durante l'invio per favore rimprova più tardi</p>";
 
-        echo "<p> Premi <a href=\"homepage.php\"> qui </a> per tornare alla home page </p>";
+        echo "<p class=\"white-p\"> Premi <a class=\"white-a\" href=\"homepage.php\"> qui </a> per tornare alla home page </p>";
+
+       echo "</div></div>"
     ?>
 
 

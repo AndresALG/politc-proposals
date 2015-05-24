@@ -33,16 +33,23 @@
   <BODY>
 
     <?php
+    echo '<div class="container">
+    <div class="topbar">
+    <div class="titleDiv">
+    <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    </div> </div>
+    <div class="advise">';
 
 
       if($adder->addPropose($author,$title,$propose,$category,$user,$date))
-        echo "<p> Proposta aggiunta!</p>";
+        echo "<p class=\"white-p\"> Proposta aggiunta!</p>";
       else
-        echo "<p> Errori durante l'inserimento per favore riprova più tardi</p>";
+        echo "<p class=\"white-p\"> Errori durante l'inserimento per favore riprova più tardi</p>";
 
-        echo "<p> Premi <a href=\"homepage.php\"> qui </a> per tornare alla home page </p>";
+        echo "<p class=\"white-p\"> Premi <a class=\"white-a\" href=\"homepage.php\"> qui </a> per tornare alla home page </p>";
+
+        echo "</div></div>"
     ?>
-
 
 </BODY>
 </HTML>
