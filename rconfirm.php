@@ -29,7 +29,7 @@
     echo '<div class="container">
     <div class="topbar">
     <div class="titleDiv">
-    <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    <h1> <a href="index.php"> Politic Proposals </a> </h1>
     </div> </div>
     <div class="advise">';
       if($reg->ControllNewUser($username)){ $reg->AddNewUser($username,$password,$email,$name,$lname,$bdate,$pplace);
@@ -40,14 +40,14 @@
         $_SESSION["admin"] = false;
         echo "<p class=\"white-p\"> Account creato con successo! </p>";
         echo "<p class=\"white-p\"> Benvenuto $username </p>";
-        echo "<p class=\"white-p\"> Tra poco verrà reindirizzato alla home se non vuole attendere premi <a class=\"white-a\" href=\"homepage.php\">qui</a> </p>";
+        echo "<p class=\"white-p\"> Tra poco verrà reindirizzato alla home se non vuole attendere premi <a class=\"white-a\" href=\"index.php\">qui</a> </p>";
 
       }
 
       else {
         echo "<p class=\"white-p\"> Creazione account fallità </p>";
         echo "<p class=\"white-p\"> Nome utente già presente nel nostro database";
-        echo "<p class=\"white-p\"> Tra poco verrà reindirizzato alla home se non vuole attendere premi <a class=\"white-a\" href=\"homepage.php\">qui</a> </p>";
+        echo "<p class=\"white-p\"> Tra poco verrà reindirizzato alla home se non vuole attendere premi <a class=\"white-a\" href=\"index.php\">qui</a> </p>";
       }
 
       echo "</div></div>";

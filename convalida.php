@@ -12,7 +12,7 @@
   <div class="container">
     <div class="topbar">
       <div class="titleDiv">
-        <h1> <a class="dstyle" href="homepage.php"> Politic Proposals </a> </h1>
+        <h1> <a class="dstyle" href="index.php"> Politic Proposals </a> </h1>
       </div>
     </div>
     <div class="form-container-proposta">

@@ -18,7 +18,7 @@
     echo '<div class="container">
     <div class="topbar">
     <div class="titleDiv">
-    <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+    <h1> <a href="index.php"> Politic Proposals </a> </h1>
     </div> </div>
     <div class="advise">';
     if(!$_SESSION["logged"]){
@@ -41,7 +41,7 @@
         mysql_query($queryaddvote) or die(mysql_error());
       }
     }
-      header("refresh:2,url=homepage.php");
+      header("refresh:2,url=index.php");
 
     echo '<div class="footer">
       <div class="footer-container">
