@@ -23,13 +23,13 @@
     <?php
     if(!$_SESSION["admin"])
       $query = "INSERT INTO Commento(IDProposta,IDUtente,Descrizione,DataEffCommento) VALUES ('$idp','$user','$comment','$data')";
-    else 
+    else
       $query = "INSERT INTO Commento(IDProposta,IDAdmin,Descrizione,DataEffCommento) VALUES ('$idp','$user','$comment','$data')";
     $response = mysql_query($query) or die($query);
 
     if($response) {
 
-      header("Location:propostapage.php?id=$idp");
+      header("Location:proposalpage.php?id=$idp");
     }
 
     ?>

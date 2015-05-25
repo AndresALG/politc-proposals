@@ -1,6 +1,9 @@
 body{
   background-image: url("/images/denim.png");
   overflow:auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 a:link, a:visited {
 

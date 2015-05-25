@@ -13,10 +13,10 @@
     $author = $_POST["author"];
     $date = $_POST["data"];
     $date = date("Y-m-d H:i:s",strtotime($date));
-    $propose = $_POST["proposta"];
+    $proposal = $_POST["proposta"];
     $category = $_POST["category"];
     $user = $_SESSION["user"];
-    $propose = addslashes($propose);
+    $proposal = addslashes($proposal);
     ?>
 
     <style>
@@ -41,7 +41,7 @@
     <div class="advise">';
 
 
-      if($adder->addPropose($author,$title,$propose,$category,$user,$date))
+      if($adder->addproposal($author,$title,$proposal,$category,$user,$date))
         echo "<p class=\"white-p\"> Proposta aggiunta!</p>";
       else
         echo "<p class=\"white-p\"> Errori durante l'inserimento per favore riprova più tardi</p>";

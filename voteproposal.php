@@ -10,6 +10,7 @@
     $conn = new Connection();
     $conn->conn();
     $conn->selectDB("proposalsDatabase");
+    $controller = new Controller();
     ?>
   </HEAD>
   <BODY>
@@ -29,29 +30,24 @@
       $USER = $_SESSION["user"];
       if(!$_SESSION["admin"]) {
       $query = "UPDATE Proposta SET Voti = Voti + 1  WHERE ID='$ID'";
-      $query_controll = "SELECT * FROM Propostavotata WHERE IDProposta='$ID' AND NomeUtente='$USER'";
-      $response_controll = mysql_query($query_controll);
-      $num_rows = mysql_num_rows($response_controll);
-      if($num_rows == 0 ){
         $response = mysql_query($query);
         if($response){
-          echo '<p class="white-p"> Voto aggiunto con successo!</p>';
+          echo '<p class="white-p"> voto aggiunto con successo!</p>';
         }
         else {
           echo '<p class="white-p"> Il voto non è stato aggiunto riporvare!</p>';
         }
         $queryaddvote = "INSERT INTO Propostavotata VALUES('$ID','$USER')";
         mysql_query($queryaddvote) or die(mysql_error());
-
-      }
-      else {
-        echo '<p class="white-p"> Hai già votato questa proposta</p>';
       }
     }
       header("refresh:2,url=homepage.php");
 
-  }
-    echo '</div></div>';
+    echo '<div class="footer">
+      <div class="footer-container">
+      <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
+    </div>
+  </div>';
     $conn->closeConn();
     ?>
 

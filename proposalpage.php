@@ -11,6 +11,7 @@
   $data=new Connection();
   $data->conn();
   $data->selectDB("proposalsDatabase");
+  $controller = new Controller();
   session_start();
   if(!isset($_SESSION["logged"])) {
     $_SESSION["logged"] = false;
@@ -26,37 +27,38 @@
         <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
       </div>
     </div>
-    <div class="propose-container">
+    <div class="proposal-container">
 
       <div class="list">
         <?php
           $queryasd = "SELECT * FROM Proposta WHERE ID='$idp'";
           $response = mysql_query($queryasd);
-          while($row = mysql_fetch_assoc($response))
-          //$row = mysql_fetch_assoc($response);
-          //for($i=0; $i<10; $i++)
+          while($row = mysql_fetch_assoc($response)){
             echo '<div class="own-list-item">
                     <div class="title-item">
-                      <div class="title-propose">
-                      <p class="propose-label">'.$row["Titolo"].'</p>
-                      <p class="propose-label">'.$row["Categoria"].'</p>
+                      <div class="title-proposal">
+                      <p class="proposal-label">'.$row["Titolo"].'</p>
+                      <p class="proposal-label">'.$row["Categoria"].'</p>
                       </div>
-                      <div class="author-propose"><p class="propose-label">'.$row["Autore"].'</p>
+                      <div class="author-proposal"><p class="proposal-label">'.$row["Autore"].'</p>
                       </div>
                     </div>
-                    <div class="propose">
-                      <p class="propose-textarea" >'.$row["Esposizione"].' </p>
+                    <div class="proposal">
+                      <p class="proposal-textarea" >'.$row["Esposizione"].' </p>
                     </div>
                     <div class="item-footer">
                       <div class="item-date">
-                        <p class="propose-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
+                        <p class="proposal-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
                       </div>
-                      <div class="item-votes">
-                        <p class="propose-label">Voto: '.$row["Voti"].' <a href="votepropose.php?auth='.$row["Autore"].'&title='.$row["Titolo"].'"> + </a> </p>
-                      </div>
+                      <div class="item-votes">';
+                        if(!$controller->controllVote($row["ID"],$_SESSION["user"]))
+                          echo '<p class="proposal-label">voti: '.$row["Voti"].'</p>';
+                        else
+                          echo '<p class="proposal-label">voti: '.$row["Voti"].' <a href="voteproposal.php?ID='.$row["ID"].'"> + </a> </p>';
 
-                    </div>
-                  </div>';
+                      echo '</div>
+                      </div>
+                    </div>';}
          ?>
       </div>
     </div>
@@ -85,7 +87,7 @@
                           </div>
                         </div>
                         <div class="comment">
-                          <p class="propose-textarea" >'.$rows["Descrizione"].' </p>
+                          <p class="proposal-textarea" >'.$rows["Descrizione"].' </p>
                           </div> ';
               }
     echo      '</div>

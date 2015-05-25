@@ -58,14 +58,14 @@ class Registration {
 
 class Post {
 
-  public function addPropose($author,$title,$proposta,$categoria,$admin,$data) {
+  public function addproposal($author,$title,$proposta,$categoria,$admin,$data) {
     $QUERY = "INSERT INTO Proposta(Autore,Titolo,Esposizione,Categoria,AdminResponsabile,DataEffProposta) VALUES ('$author','$title','$proposta','$categoria','$admin','$data')";
     $response = mysql_query($QUERY) or die(mysql_error());
 
     return $response;
   }
 
-  public function removerPropose($autor,$title) {
+  public function removerproposal($autor,$title) {
 
   }
 
@@ -84,6 +84,25 @@ class Chooser {
     $result = mysql_query( " SELECT * FROM `Admin` LIMIT $offset, 1 " );
     $row = mysql_fetch_assoc($result);
     return $row["Email"];
+  }
+
+}
+
+class Controller{
+
+  public function controllVote($ID,$USER){
+
+    $query_controll = "SELECT * FROM Propostavotata WHERE IDProposta='$ID' AND NomeUtente='$USER'";
+    $response=mysql_query($query_controll);
+    $rows = mysql_num_rows($response);
+    if( $rows == 0) {
+      return true;
+    }
+
+    return false;
+
+
+
   }
 
 }

@@ -14,14 +14,14 @@
 
     $chooser = new Chooser();
     $title = $_POST["title"];
-    $propose = $_POST["proposta"];
+    $proposal = $_POST["proposta"];
     $category = $_POST["category"];
     $user = $_SESSION["user"];
     $adminemail = $chooser->chooseAdminEmail();
-    $subject ="Propose from ".$user;
+    $subject ="proposal from ".$user;
     $date = date("Y-m-d H:i:s"); //mounth day year;
-    $arrayMessage=array("Titolo"=>$title,"Autore"=>$user,"Proposta"=>$propose,"Categoria"=>$category,"Data"=>$date);
-    //$message = "titolo: ".$title."\nAutore: ".$user."\nProposta:\n".$propose."\nCategoria: ".$category."\nData: ".$date;
+    $arrayMessage=array("Titolo"=>$title,"Autore"=>$user,"Proposta"=>$proposal,"Categoria"=>$category,"Data"=>$date);
+    //$message = "titolo: ".$title."\nAutore: ".$user."\nProposta:\n".$proposal."\nCategoria: ".$category."\nData: ".$date;
     $sender = new Sender();
     ?>
 

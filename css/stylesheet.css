@@ -7,24 +7,19 @@
 }
 @font-face{
   font-family: textAreaFont;
-  src: url("/fonts/king.ttf");
+  src: url("/fonts/LinLibertine_RZ.ttf");
   font-weight: normal;
 }
 html{
   height: auto;
 }
 div.container{
-  position: fixed;
-  top:0px;
-  left: 0px;
-  right: 0px;
-  bottom:0px;
-  clear: both;
-  overflow: auto;
+  position: relative;
+  padding-bottom: 100px;
+  min-height: 100%;
 }
 
-ul.navigatorBar {
-  z-index: 2;
+ul.navigatorbar {
   float:right;
   margin-right: 50px;
   position:static;
@@ -38,25 +33,21 @@ div.categories-navigator {
 }
 
 div.titleDiv {
-  z-index: 2;
   float:left;
   position:static;
   margin-left: 50px;
 }
 
 div.topbar {
-  z-index: -2;
   background-color: white;
   overflow: auto;
-  position: static;
-  width: auto;
 }
 
-div.propose-container,div.comments-container {
+div.proposal-container,div.comments-container,div.advise,div.personal-list {
   margin-left: auto;
   margin-right: auto;
-  width: auto;
   clear:both;
+  padding-bottom: 100px;
 }
 
 
@@ -91,21 +82,16 @@ a.select-element:link{
 
 
 div.footer{
-  position: relative;
+  width: 100%;
+  position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
   background-color: white;
-  height: 3em;
-  line-height: 3em;
-  text-align: left;
 
 }
 div.footer-container{
   width: 100%;
   display: inline-block;
-  position: relative;
-  background-color: white;
 }
 div.footer-paragraph{
   float:left;
@@ -114,18 +100,14 @@ div.footer-paragraph{
   display: inline-block;
   color: #354050;
   font-family: codeBold;
-  margin-top: 1.2em;
 }
 
 div.logo-footer{
   float:right;
   display: inline-block;
-  margin: 1em;
-  width: auto;
 }
 
 div.list,div.list-home{
-  position: relative;
   clear: both;
   display: block;
   margin-left: auto;
@@ -134,15 +116,17 @@ div.list,div.list-home{
 }
 
 div.personal-list{
-  position: relative;
   clear: both;
   width: 50em;
   margin-left: 5em;
   margin-top: 5em;
+  border:2px;
+  border-style: dashed;
 }
 
 div.list-home{
   width: 45em;
+  height: auto;
 }
 
 div.list{
@@ -156,8 +140,6 @@ div.list-comments{
   margin-right: auto;
   background-color: transparent;
 
-  border: 2px;
-  border-style: dashed;
 }
 
 div.list-item, div.own-list-item,div.comment-list-item{
@@ -190,14 +172,14 @@ div.comment-text{
 
 }
 
-div.title-propose , div.item-date, div.title-comment{
+div.title-proposal , div.item-date, div.title-comment{
   float: left;
 }
 div.div.title-comment{
   border:10px;
   border-style: solid;
 }
-div.author-propose, div.item-votes,div.date-comment{
+div.author-proposal, div.item-votes,div.date-comment{
   margin-left: 100px;
   float: right;
 }
@@ -206,7 +188,7 @@ div.item-votes{
   display: inline-block;
 }
 
-div.propose,div.comment{
+div.proposal,div.comment{
   position: relative;
   clear: both;
   border:5px;
@@ -218,14 +200,14 @@ div.comment{
   padding: -bottom: 2px;
 }
 
-p.propose-textarea{
+p.proposal-textarea{
   text-align: left;
   margin: 10px;
   display: inline-block;
   font-family: textAreaFont;
 }
 
-p.propose-label,p.comment-label,p.comment-label-admin{
+p.proposal-label,p.comment-label,p.comment-label-admin{
   text-align: left;
   margin: 10px;
   display: block;
