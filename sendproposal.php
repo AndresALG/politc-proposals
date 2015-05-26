@@ -2,6 +2,7 @@
   <HEAD>
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
     <link href="css/defaultstyle.css" type="text/css" rel="stylesheet">
+    <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
     <?php
     include "php/Sender.php";
     include "php/Connection.php";
@@ -25,15 +26,6 @@
     $sender = new Sender();
     ?>
 
-    <style>
-    p,a:visited{
-      color: white;
-    }
-    a:visited,a:link {
-      display: inline;
-    }
-
-    </style>
   </HEAD>
 
   <BODY>
@@ -43,8 +35,9 @@
     echo '<div class="container">
     <div class="topbar">
     <div class="titleDiv">
-    <h1> <a href="index.php"> Politic Proposals </a> </h1>
-    </div> </div>
+    <h1> <a href="index.php"> Political Proposals </a> </h1>
+    </div>
+    </div>
     <div class="advise">';
 
       if($sender->sendEmail($adminemail,$arrayMessage,$subject))

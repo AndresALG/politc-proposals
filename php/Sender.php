@@ -32,6 +32,8 @@ class Sender {
     $mail->Subject = $subj;
     $mail->Body = $message;
 
+
+
     return $mail->send();
 
   }

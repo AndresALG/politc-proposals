@@ -4,7 +4,7 @@
   <?php session_start(); ?>
   <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
   <meta charset="utf-8">
-  <title> <?php echo $_SESSION["user"]."'s"; ?> page</title>
+  <title> <?php echo $_SESSION["user"]."'s"; $user = $_SESSION["user"];?> page</title>
   <link href="css/stylesheet.css" rel="stylesheet" type="text/css">
   <link href="css/defaultstyle.css" rel="stylesheet" type="text/css">
 </head>
@@ -12,19 +12,19 @@
 <div class="container">
   <div class="topbar">
     <div class="titleDiv">
-      <h1> <a href="index.php"> Politic Proposals </a> </h1>
+      <h1> <a href="index.php"> Political Proposals </a> </h1>
     </div>
     <ul class="navigatorbar">
       <?php
       if (!$_SESSION["admin"]) {
         echo '<li><a href="logout.php">Logout</a></li>
         <li><a href="writeproposal.php">Proponi </a></li>
-        <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
+        <li><a href="mypage.php">Benvenuto '.$user.'</a></li>';
       }
       else {
         echo '<li><a href="logout.php">Logout</a></li>
         <li><a href="convalida.php">Convalida proposta </a></li>
-        <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
+        <li><a href="mypage.php">Benvenuto '.$user.'</a></li>';
       }
       ?>
     </ul>
@@ -40,27 +40,37 @@
   $conn = new Connection();
   $conn->conn();
   $conn->selectDB("proposalsDatabase");
-  $query = "SELECT * FROM Proposta WHERE Autore = '$_SESSION[user]'";
-  $response = mysql_query($query) or die (mysql_error());
-  while($row = mysql_fetch_assoc($response))
-  echo '<div class="list-item">
-          <div class="title-item">
-            <div class="title-proposal">
-            <p class="proposal-label">  <a href="proposalpage.php?id='.$row["ID"].'"class="item-link">'.$row["Titolo"].'</a></p></div>
-            <div class="author-proposal"><p class="proposal-label">'.$row["Autore"].'</p></div>
+  $query = "SELECT * FROM Utente WHERE Username = '$user'";
+  $queryAdmin = "SELECT * FROM Admin WHERE Username = '$user]'";
+  if(!$_SESSION["admin"]) {
+    $response = mysql_query($query) or die (mysql_error());
+    echo '<div class="list-item">
+              <div class="title-item">
+                <div class="title-proposal">
+                <p class="my-information-label">Le mie informazioni</p>
+                </div>
+              </div>
+              <div class="proposal">
+              <label><div class="element-container-registration">Password: <div class="textbox-registration"><input name="password" type="password" class="text" required/></div></div></label>
+              <label><div class="element-container-registration"> Conferma password: <div class="textbox-registration"><input name="rpassword" type="password" class="text" required/></div></div></label>
+              <p class="proposal-label"> Proposte: </p>
+              </div>
+              <div class="item-footer">
+                <div class="item-button">
+                  <button class="proposal-label">Modifica  </button>
+                </div>
+              </div>
+            </div>';
+  }
+  else {
+    $response = mysql_query($queryAdmin) or die (mysql_error());
 
-          </div>
-          <div class="proposal">
-            <p class="proposal-textarea" >'.$row["Esposizione"].' </p>
-          </div>
-          <div class="item-footer">
-            <div class="item-date">
-              <p class="proposal-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
-            </div>
+  }
+  $row = mysql_fetch_assoc($response);
 
 
-          </div>
-        </div>'  ;
+
+
 
     ?>
 

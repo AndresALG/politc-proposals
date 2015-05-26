@@ -10,7 +10,7 @@ class Connection {
 
   public function conn() {
     if(!$this->active) {
-      mysql_connect($this->nameServer,$this->userServer,$this->pswServer) or die("Server doesn't found");
+      mysql_connect($this->nameServer,$this->userServer,$this->pswServer) or die("Server not found");
       $this->active = true;
     }
   return true;
@@ -47,6 +47,27 @@ class Registration {
 
   public function AddNewUser($user,$psw,$pmail,$name,$lname,$bdate,$pbirth){
     $QUERY_ADD = "INSERT INTO Utente VALUES ('$user','$psw','$pmail','$name','$lname','$bdate','$pbirth')";
+
+    $response = mysql_query($QUERY_ADD) or die(mysql_error());
+
+    return $response;
+
+  }
+
+  public function ControllNewAdmin($admin){
+    $QUERY_CONTROLL = "SELECT * FROM Admin WHERE username=\"$admin\"";
+    $response = mysql_query($QUERY_CONTROLL);
+    $num_rows = mysql_num_rows($response);
+
+    if($num_rows == 0)
+      return true;
+
+    return false;
+
+  }
+
+  public function AddNewAdmin($user,$psw,$pmail,$name,$lname,$bdate){
+    $QUERY_ADD = "INSERT INTO Admin VALUES ('$user','$psw','$pmail','$name','$lname','$bdate')";
 
     $response = mysql_query($QUERY_ADD) or die(mysql_error());
 

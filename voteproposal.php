@@ -18,7 +18,7 @@
     echo '<div class="container">
     <div class="topbar">
     <div class="titleDiv">
-    <h1> <a href="index.php"> Politic Proposals </a> </h1>
+    <h1> <a href="index.php"> Political Proposals </a> </h1>
     </div> </div>
     <div class="advise">';
     if(!$_SESSION["logged"]){

@@ -27,7 +27,7 @@
   <div class="container">
     <div class="topbar">
       <div class="titleDiv">
-        <h1> <a href="index.php"> Politic Proposals </a> </h1>
+        <h1> <a href="index.php"> Political Proposals </a> </h1>
       </div>
       <ul class="navigatorbar">
         <?php
@@ -42,6 +42,7 @@
         }
         else {
           echo '<li><a href="logout.php">Logout</a></li>
+          <li><a href="addadmin.php">Aggiungi admin</a></li>
           <li><a href="convalida.php">Convalida proposta </a></li>
           <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
         }
@@ -58,7 +59,7 @@
 
       <div class="list-home">
         <?php
-          $queryasd = "SELECT * FROM Proposta ORDER BY DataEffProposta ASC";
+          $queryasd = "SELECT * FROM Proposta ORDER BY DataEffProposta DESC";
           $response = mysql_query($queryasd);
           while($row = mysql_fetch_assoc($response)) {
             echo '<div class="list-item">
