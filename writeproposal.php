@@ -23,6 +23,15 @@
                                     <option value="Finanza"> Finanza </option>
                                     <option value="Economia"> Economia </option>
                                     <option value="Istruzione"> Instruzione </option>
+                                    <option value="Affari esteri">Affari esteri</option>
+                                    <option value="Giustizia">Giustizia</option>
+                                    <option value="Difesa">Difesa</option>
+                                    <option value="Sviluppo economico">Sviluppo economico </option>
+                                    <option value="Ambiente">Ambiente</option>
+                                    <option value="Infrastrutture e trasporti">Infrastrutture e transporti </option>
+                                    <option value="Lavoro">Lavoro </option>
+                                    <option value="Salute"> Salute </option>
+                                    <option value="Turismo">Turismo</option>
                                   </select> </div>
                                   </label>
             <div class="element-container-footer"><input type="submit" name="submit" value="Invia proposta" class="submit"></div>

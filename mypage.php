@@ -44,6 +44,8 @@
   $queryAdmin = "SELECT * FROM Admin WHERE Username = '$user]'";
   if(!$_SESSION["admin"]) {
     $response = mysql_query($query) or die (mysql_error());
+    $row = mysql_fetch_assoc($response);
+
     echo '<div class="list-item">
               <div class="title-item">
                 <div class="title-proposal">
@@ -51,8 +53,8 @@
                 </div>
               </div>
               <div class="proposal">
-              <label><div class="element-container-registration">Password: <div class="textbox-registration"><input name="password" type="password" class="text" required/></div></div></label>
-              <label><div class="element-container-registration"> Conferma password: <div class="textbox-registration"><input name="rpassword" type="password" class="text" required/></div></div></label>
+              <p class="proposal-label">'.$row["Nome"].' '.$row["Cognome"].'</p>
+              <p class="proposal-label">Email: '.$row["Email"].'</p>
               <p class="proposal-label"> Proposte: </p>
               </div>
               <div class="item-footer">
@@ -66,7 +68,6 @@
     $response = mysql_query($queryAdmin) or die (mysql_error());
 
   }
-  $row = mysql_fetch_assoc($response);
 
 
 
