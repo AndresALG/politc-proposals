@@ -13,10 +13,13 @@
   $data->conn();
   $data->selectDB("proposalsDatabase");
   $string_helper = new StringHelper();
-  $controller = new Controller();
+  $controller = new controller();
   session_start();
   if(!isset($_SESSION["logged"])) {
     $_SESSION["logged"] = false;
+  }
+  if(!isset($_SESSION["user"])) {
+    $_SESSION["user"] = "anonymous";
   }
   ?>
 </head>
@@ -40,26 +43,39 @@
         else {
           echo '<li><a href="logout.php">Logout</a></li>
           <li><a href="convalida.php">Convalida proposta </a></li>
-          <li><a href="MyPage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
+          <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
         }
         ?>
       </ul>
     </div>
     <div class="proposal-container">
-      <ul class="navigatorbar-elements">
+      <ul>
         <li class="list-navigation-elements"> <a class="n-element" href="index.php"> Home </a></li>
-        <li class="list-navigation-elements"> <a class="select-element" href="tops.php"> Più votate </a></li>
-        <li class="list-navigation-elements"> <a class="n-element" href="categorie.php">Categorie </a></li>
+        <li class="list-navigation-elements"> <a class="n-element" href="tops.php"> Più votate </a></li>
+        <li class="list-navigation-elements"> <a class="select-element" href="categorie.php">Categorie </a></li>
       </ul>
+    <div class="categories-navigator">
+      <ul>
+        <?php
+          $querycategorie = "SELECT DISTINCT Categoria FROM Proposta ORDER BY Categoria";
+          $responsecategorie = mysql_query($querycategorie) or die(mysql_error());
+          $crow = mysql_fetch_assoc($responsecategorie);
+          $maincategory = $crow["Categoria"];
+          echo '<li class="list-navigation-elements"><a class="select-element" href="Categoriascelta.php?categoria='.$maincategory.'">'.$maincategory.'</a></li>';
+          while($crow = mysql_fetch_assoc($responsecategorie))
+            echo '<li class="list-navigation-elements"><a class="n-element" href="Categoriascelta.php?categoria='.$crow["Categoria"].'">'.$crow["Categoria"].'</a></li>';
+         ?>
+      </ul>
+    </div>
       <div class="list-home">
         <?php
-          $queryasd = "SELECT * FROM Proposta ORDER BY Voti DESC LIMIT 10";
+          $queryasd = "SELECT * FROM Proposta WHERE Categoria = '$maincategory' ORDER BY DataEffProposta DESC";
           $response = mysql_query($queryasd);
           while($row = mysql_fetch_assoc($response)){
             echo '<div class="list-item">
                     <div class="title-item">
                       <div class="title-proposal">
-                      <p class="proposal-label">  <a href="proposalpage.php?id='.$row["ID"].'" class="item-link">' .$row["Titolo"].'</a></p>
+                      <p class="proposal-label">  <a href="proposalpage.php?id='.$row["ID"].'"class="item-link">'.$row["Titolo"].'</a></p>
                       <p class="proposal-label">'.$row["Categoria"].'</p>
                       </div>
                       <div class="author-proposal"><p class="proposal-label">'.$row["Autore"].'</p>
@@ -82,6 +98,8 @@
                     </div>
                   </div>';
                 }
+
+
          ?>
       </div>
     </div>
@@ -92,5 +110,7 @@
     </div>
   </div>
   </div>
+
+
 </body>
 </html>

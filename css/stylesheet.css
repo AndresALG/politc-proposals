@@ -1,50 +1,55 @@
 @font-face{
   font-family: codeBold;
-  src: url("/fonts/CODE Bold.otf");
+  src: url("/fonts/LinLibertine_RB.ttf");
+  font-weight: small;
+  font-style: small;
+  font-size: 2px;
 }
 @font-face{
   font-family: textAreaFont;
-  src: url("/fonts/latin.otf");
+  src: url("/fonts/LinLibertine_RZ.ttf");
+  font-weight: normal;
 }
 html{
-  height: 100%;
+  height: auto;
 }
 div.container{
-  position: fixed;
-  top:0px;
-  left: 0px;
-  right: 0px;
-  bottom:0px;
-  clear: both;
-  overflow: auto;
+  position: relative;
+  padding-bottom: 100px;
+  min-height: 100%;
 }
 
-ul.navigatorBar {
-  z-index: 2;
+ul.navigatorbar {
   float:right;
   margin-right: 50px;
   position:static;
 }
 
+div.categories-navigator {
+  display: block;
+  position: relative;
+  clear: both;
+  margin-left: 2em;
+}
+
 div.titleDiv {
-  z-index: 2;
   float:left;
   position:static;
   margin-left: 50px;
 }
 
 div.topbar {
-  z-index: -2;
   background-color: white;
   overflow: auto;
-  position: static;
 }
 
-div.propose-container,div.comments-container {
-  margin-left: 100px;
-  position: relative;
+div.proposal-container,div.comments-container,div.advise,div.personal-list {
+  margin-left: auto;
+  margin-right: auto;
   clear:both;
+  padding-bottom: 100px;
 }
+
 
 li {
   white-space:nowrap;
@@ -77,58 +82,104 @@ a.select-element:link{
 
 
 div.footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background-color: white;
-  position: relative;
-  clear:both;
-  height:25px;
-  margin-top:180px;
-  padding: 2.2em;
-}
 
-p.footer-paragraph{
-  text-align: left;
+}
+div.footer-container{
+  width: 100%;
+  display: inline-block;
+}
+div.footer-paragraph{
+  float:left;
   margin: 2px;
   margin-left: 25px;
+  display: inline-block;
+  color: #354050;
+  font-family: codeBold;
+}
+
+div.logo-footer{
+  float:right;
+  display: inline-block;
+}
+
+div.list,div.list-home{
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+div.personal-list{
+  clear: both;
+  width: 50em;
+  margin-left: 5em;
+  margin-top: 5em;
+  border:2px;
+  border-style: dashed;
+}
+
+div.list-home{
+  width: 45em;
+  height: auto;
 }
 
 div.list{
-  position: relative;
-  clear: both;
-  margin-left: 50px;
-  margin-top: 100px;
-  margin-right: 50px;
-  display: block;
-
-  border:2px;
-  border-style: dashed;
-
+  margin-top: 5em;
+  width: 800px;
 
 }
-div.list-item, div.own-list-item{
+div.list-comments{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: transparent;
+
+}
+
+div.list-item, div.own-list-item,div.comment-list-item{
   position: relative;
   overflow: auto;
   background-color: white;
-  width: 600px;
+  width: auto;
   margin-bottom: 20px;
 }
+
 div.own-list-item{
   position: relative;
-  margin-left: 220px;
+  width:auto;
 }
-div.title-item {
+div.title-item ,div.title-item-comment{
   height: 60px;
   position: relative;
   border:5px;
   padding-bottom: 10px;
   border-color: #354050;
   border-style: none none solid none;
+}
+
+div.title-item-comment{
+  border-style: none;
+  height: 10px;
+}
+
+div.comment-text{
 
 }
-div.title-propose , div.item-date, div.title-comment{
+
+div.title-proposal , div.item-date, div.title-comment{
   float: left;
 }
-
-div.author-propose, div.item-votes{
+div.div.title-comment{
+  border:10px;
+  border-style: solid;
+}
+div.author-proposal, div.item-votes,div.date-comment{
   margin-left: 100px;
   float: right;
 }
@@ -137,7 +188,7 @@ div.item-votes{
   display: inline-block;
 }
 
-div.propose,div.comment{
+div.proposal,div.comment{
   position: relative;
   clear: both;
   border:5px;
@@ -145,20 +196,26 @@ div.propose,div.comment{
   border-style: none none solid none;
 }
 
-p.propose-textarea{
+div.comment{
+  padding: -bottom: 2px;
+}
+
+p.proposal-textarea{
   text-align: left;
   margin: 10px;
   display: inline-block;
   font-family: textAreaFont;
 }
 
-p.propose-label{
+p.proposal-label,p.comment-label,p.comment-label-admin{
   text-align: left;
   margin: 10px;
   display: block;
   margin-bottom: 10px;
 }
-
+p.comment-label-admin{
+  color: #503540;
+}
 a.item-link:visited,a.item-link:link,p.item{
   display: block;
   width: 100%;
@@ -187,10 +244,16 @@ button.send-comment{
   margin:2px;
 }
 
-textarea.comment-text-area{
+textarea.comment-textarea{
   border: 2px;
-  width: 99%;
+  border-style: solid;
+  width: 40em;
   margin-top: 5px;
+  margin-left: 2px;
   resize:none;
+  border-color: #354050;
+  color: #354050;
+  font-size: 0.9em;
+  font-family: textAreaFont;
 
 }

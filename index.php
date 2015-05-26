@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
@@ -17,6 +17,9 @@
   session_start();
   if(!isset($_SESSION["logged"])) {
     $_SESSION["logged"] = false;
+  }
+  if(!isset($_SESSION["user"])) {
+    $_SESSION["user"] = "anonymous";
   }
   ?>
 </head>
@@ -40,30 +43,31 @@
         else {
           echo '<li><a href="logout.php">Logout</a></li>
           <li><a href="convalida.php">Convalida proposta </a></li>
-          <li><a href="MyPage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
+          <li><a href="mypage.php">Benvenuto '.$_SESSION["user"].'</a></li>';
         }
         ?>
       </ul>
     </div>
     <div class="proposal-container">
-      <ul class="navigatorbar-elements">
-        <li class="list-navigation-elements"> <a class="n-element" href="index.php"> Home </a></li>
-        <li class="list-navigation-elements"> <a class="select-element" href="tops.php"> Più votate </a></li>
+      <ul>
+        <li class="list-navigation-elements"> <a class="select-element" href="index.php"> Home </a></li>
+        <li class="list-navigation-elements"> <a class="n-element" href="tops.php"> Più votate </a></li>
         <li class="list-navigation-elements"> <a class="n-element" href="categorie.php">Categorie </a></li>
       </ul>
+
+
       <div class="list-home">
         <?php
-          $queryasd = "SELECT * FROM Proposta ORDER BY Voti DESC LIMIT 10";
+          $queryasd = "SELECT * FROM Proposta ORDER BY DataEffProposta ASC";
           $response = mysql_query($queryasd);
-          while($row = mysql_fetch_assoc($response)){
+          while($row = mysql_fetch_assoc($response)) {
             echo '<div class="list-item">
                     <div class="title-item">
                       <div class="title-proposal">
-                      <p class="proposal-label">  <a href="proposalpage.php?id='.$row["ID"].'" class="item-link">' .$row["Titolo"].'</a></p>
+                      <p class="proposal-label">  <a href="proposalpage.php?id='.$row["ID"].'"class="item-link">'.$row["Titolo"].'</a></p>
                       <p class="proposal-label">'.$row["Categoria"].'</p>
                       </div>
-                      <div class="author-proposal"><p class="proposal-label">'.$row["Autore"].'</p>
-                      </div>
+                      <div class="author-proposal"><p class="proposal-label">'.$row["Autore"].'</p></div>
                     </div>
                     <div class="proposal">
                       <p class="proposal-textarea" >'.$string_helper->deleteText($row["Esposizione"],300).' </p>
@@ -72,7 +76,7 @@
                       <div class="item-date">
                         <p class="proposal-label">'.date("d-m-Y",strtotime($row["DataEffProposta"])).'</p>
                       </div>
-                      <div class="item-votes">';
+                    <div class="item-votes">';
                       if(!$controller->controllVote($row["ID"],$_SESSION["user"]))
                         echo '<p class="proposal-label">voti: '.$row["Voti"].'</p>';
                       else
@@ -88,9 +92,10 @@
     <div class="footer">
       <div class="footer-container">
       <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
-      
     </div>
   </div>
   </div>
+
+
 </body>
 </html>

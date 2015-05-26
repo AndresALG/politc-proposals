@@ -1,11 +1,9 @@
-@font-face{
-  font-family: codeBold;
-  src: url("/fonts/CODE Bold.otf");
-}
-
 body{
   background-image: url("/images/denim.png");
   overflow:auto;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 a:link, a:visited {
 
@@ -31,7 +29,7 @@ a:hover, a:active{
     background-color: rgba(53,64,80,0.1);
 }
 
-button{
+button,input.submit{
   border: none;
   background: transparent;
   color: #354050;

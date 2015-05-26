@@ -36,27 +36,30 @@
   <div class="container">
   <div class="topbar">
     <div class="titleDiv">
-      <h1> <a href="homepage.php"> Politic Proposals </a> </h1>
+      <h1> <a href="index.php"> Politic Proposals </a> </h1>
     </div>
 </div>
-  <div class="formdiv">
+<div class="form-container">
     <form action="rconfirm.php" method="post" onsubmit="return controll()" name="rform">
-      <fieldset class="fieldstyle"><legend> Registrazione </legend>
-
-        <label> Username: <div class="textbox"><input name="username" type="text" class="text" required /></div></label> <br> <br>
-        <label> Password: <div class="textbox"><input name="password" type="password" class="text" required/></div></label> <br> <br>
-        <label> Conferma password: <div class="textbox"><input name="rpassword" type="password" class="text" required/></div></label><br><br>
-        <label> Email:<div class="textbox"><input name="email" type="email" class="text" required></div></label>  <br> <br>
-        <label> Conferma email: <div class="textbox"><input name="remail" type="email" class="text" required></div></label><br><br>
-        <label> Nome: <div class="textbox"><input name="nome" type="text" class="text" required></div></label>  <br> <br>
-        <label> Cognome: <span><div class="textbox"><input name="cognome" type="text" class="text" required/></div></label>  <br> <br>
-        <label> Data di nascita: <div class="textbox"><input name="datan" type="date" class="text" required/></div></label>  <br> <br>
-        <label> Luogo di nascita: <div class="textbox"> <input name="luogon" type="text"class="text" required/></div></label> <br> <br>
-
-      </fieldset> <br> <br>
-      <div class="inputDiv"><input type="submit" value="Registrazione" name="submit"  class="submit"></div>
+      <label><div class="element-container-header">Registrazione  </div></label>
+        <label><div class="element-container-registration"> Username: <div class="textbox-registration"><input name="username" type="text" class="text" required /></div> </div></label>
+        <label><div class="element-container-registration">Password: <div class="textbox-registration"><input name="password" type="password" class="text" required/></div></div></label>
+        <label><div class="element-container-registration"> Conferma password: <div class="textbox-registration"><input name="rpassword" type="password" class="text" required/></div></div></label>
+        <label><div class="element-container-registration"> Email:<div class="textbox-registration"><input name="email" type="email" class="text" required></div></div></label>
+        <label><div class="element-container-registration"> Conferma email: <div class="textbox-registration"><input name="remail" type="email" class="text" required></div></div></label>
+        <label><div class="element-container-registration"> Nome: <div class="textbox-registration"><input name="nome" type="text" class="text" required></div></div></label>
+        <label><div class="element-container-registration"> Cognome: <div class="textbox-registration"><input name="cognome" type="text" class="text" required/></div></div></label>
+        <label><div class="element-container-registration"> Data di nascita: <div class="textbox-registration"><input name="datan" type="date" class="text" required/></div></div></label>
+        <label><div class="element-container-registration"> Luogo di nascita: <div class="textbox-registration"> <input name="luogon" type="text"class="text" required/></div></div></label>
+        <div class="element-container-footer"><input type="submit" value="Registrati" name="submit"  class="submit"></div>
     </form>
   </div>
+  <div class="footer">
+    <div class="footer-container">
+    <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
+    
+  </div>
+</div>
 </div>
 </body>
 </html>

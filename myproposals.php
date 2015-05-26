@@ -31,8 +31,8 @@
   </div>
 
   <ul class="navigatorbar-elements">
-    <li class="list-navigation-elements"> <a class="select-element" href="mypage.php"> Le mie informazioni </a></li>
-    <li class="list-navigation-elements"> <a class="n-element" href="myproposals.php"> Le mie proposte </a></li>
+    <li class="list-navigation-elements"> <a class="n-element" href="mypage.php"> Le mie informazioni </a></li>
+    <li class="list-navigation-elements"> <a class="select-element" href="myproposals.php"> Le mie proposte </a></li>
   </ul>
   <div class="personal-list">
   <?php
@@ -46,8 +46,11 @@
   echo '<div class="list-item">
           <div class="title-item">
             <div class="title-proposal">
-            <p class="proposal-label">  <a href="proposalpage.php?id='.$row["ID"].'"class="item-link">'.$row["Titolo"].'</a></p></div>
-            <div class="author-proposal"><p class="proposal-label">'.$row["Autore"].'</p></div>
+            <p class="proposal-label">'.$row["Titolo"].'</p></div>
+            <div class="author-proposal">
+            <p class="proposal-label">'.$row["Autore"].'</p>
+            <p class="proposal-label"> <a href="modify.php?id='.$row["ID"].'"class="item-link">Edit </a> </p>
+            </div>
 
           </div>
           <div class="proposal">

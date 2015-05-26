@@ -2,6 +2,7 @@
   <HEAD>
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
     <link href="css/defaultstyle.css" type="text/css" rel="stylesheet">
+    <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
     <?php
     session_start();
     include "php/Connection.php";
@@ -25,25 +26,31 @@
   <BODY>
 
     <?php
+    echo '<div class="container">
+    <div class="topbar">
+    <div class="titleDiv">
+    <h1> <a href="index.php"> Politic Proposals </a> </h1>
+    </div> </div>
+    <div class="advise">';
       if($reg->ControllNewUser($username)){ $reg->AddNewUser($username,$password,$email,$name,$lname,$bdate,$pplace);
 
         $QUERY_ADD = "INSERT INTO Utente() VALUES ($username,$password,'$email',$name,$lname,$bdate,$pplace)";
         $_SESSION["logged"] = true;
         $_SESSION["user"] = $username;
         $_SESSION["admin"] = false;
-        echo "<p> $QUERY_ADD <p>";
-        echo "<p> Account creato con successo! </p>";
-        echo "<p> Benvenuto $username </p>";
-        echo "<p> Tra poco verrà reindirizzato alla home se non vuole attendere prpxa <a href=\"homepage.php\">qui</a> </p>";
+        echo "<p class=\"white-p\"> Account creato con successo! </p>";
+        echo "<p class=\"white-p\"> Benvenuto $username </p>";
+        echo "<p class=\"white-p\"> Tra poco verrà reindirizzato alla home se non vuole attendere premi <a class=\"white-a\" href=\"index.php\">qui</a> </p>";
 
       }
 
       else {
-        echo "<p> Creazione account fallità </p>";
-        echo "<p> Nome utente già presente nel nostro database";
-        echo "<p> Tra poco verrà reindirizzato alla home se non vuole attendere prpxa <a href=\"homepage.php\">qui</a> </p>";
+        echo "<p class=\"white-p\"> Creazione account fallità </p>";
+        echo "<p class=\"white-p\"> Nome utente già presente nel nostro database";
+        echo "<p class=\"white-p\"> Tra poco verrà reindirizzato alla home se non vuole attendere premi <a class=\"white-a\" href=\"index.php\">qui</a> </p>";
       }
 
+      echo "</div></div>";
       $conn->closeConn();
     ?>
 
