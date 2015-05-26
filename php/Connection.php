@@ -4,7 +4,7 @@ class Connection {
 
   private $nameServer = "localhost";
   private $userServer = "root";
-  private $pswServer = "96fgh96";
+  private $pswServer = "xaldin";
 
   private $active = false;
 
