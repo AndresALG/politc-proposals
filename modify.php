@@ -26,10 +26,10 @@
       <div class="form-container-proposta">
         <form method="post" action="sendproposal.php" onsubmit="return controll()" name="form">
           <label> <div class="element-container-header">Modifica proposta  </div></label>
-          <label> <div class="element-container-proposta">  Titolo <input type="text" name="title" class="text" value=<?php echo $row["Titolo"] ?> ></div></label>
+          <label> <div class="element-container-proposta">  Titolo <input type="text" name="title" class="text" value=<?php echo $row["Titolo"] ?> readonly></div></label>
           <label> <div class="element-container-proposta"> Descrizione <textarea class="textstyle" name="proposta" rows="15" cols="170" > <?php echo $row["Esposizione"]?> </textarea></div> </label>
-            <label> <div class="element-container-proposta"> Categoria <input type="text" name="title" class="text" value=<?php echo $row["Categoria"]?>></div></label>
-            <div class="element-container-footer"><input type="submit" name="submit" value="Proponi" class="submit"></div>
+            <label> <div class="element-container-proposta"> Categoria <input type="text" name="title" class="text" value=<?php echo $row["Categoria"]?> readonly></div></label>
+            <div class="element-container-footer"><input type="submit" name="submit" value="Invia modifica" class="submit"></div>
         </form>
       </div>
     </div>

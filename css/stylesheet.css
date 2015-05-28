@@ -1,9 +1,6 @@
 @font-face{
   font-family: codeBold;
-  src: url("/fonts/LinLibertine_RB.tff");
-  font-weight: small;
-  font-style: small;
-  font-size: 2px;
+  src: url("/fonts/CODE Bold.otf");
 }
 @font-face{
   font-family: textAreaFont;
@@ -11,11 +8,12 @@
   font-weight: normal;
 }
 html{
-  height: auto;
+  hmargin: 0;
+  padding: 0;
+  height: 100%;
 }
 div.container{
   position: relative;
-  padding-bottom: 100px;
   min-height: 100%;
 }
 
@@ -83,7 +81,7 @@ a.select-element:link{
 
 div.footer{
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   background-color: white;

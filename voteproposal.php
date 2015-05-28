@@ -41,9 +41,10 @@
         mysql_query($queryaddvote) or die(mysql_error());
       }
     }
-      header("refresh:2,url=index.php");
+      //header("refresh:2,url=index.php");
 
-    echo '<div class="footer">
+    echo '</div>
+    <div class="footer">
       <div class="footer-container">
       <div class="footer-paragraph"> Copyright (c) 2014 Copyright Holder All Rights Reserved. </div>
     </div>

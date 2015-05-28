@@ -3,8 +3,8 @@
 class Connection {
 
   private $nameServer = "localhost";
-  private $userServer = "root";
-  private $pswServer = "xaldin";
+  private $userServer = "ryder";
+  private $pswServer = "96fgh96";
 
   private $active = false;
 
