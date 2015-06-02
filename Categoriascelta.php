@@ -58,11 +58,12 @@
     <div class="categories-navigator">
       <ul>
         <?php
-          $querycategorie = "SELECT DISTINCT Categoria FROM Proposta ORDER BY Categoria";
+          $querycategorie = "SELECT DISTINCT Categoria FROM Proposta ";
           $responsecategorie = mysql_query($querycategorie) or die(mysql_error());
           while($crow = mysql_fetch_assoc($responsecategorie)) {
-            if($crow["Categoria"] !== $categorias)
+            if($crow["Categoria"] !== $categorias){
             echo '<li class="list-navigation-elements"><a class="n-element" href="Categoriascelta.php?categoria='.$crow["Categoria"].'">'.$crow["Categoria"].'</a></li>';
+            }
             else {
               echo '<li class="list-navigation-elements"><a class="select-element" href="Categoriascelta.php?categoria='.$crow["Categoria"].'">'.$crow["Categoria"].'</a></li>';
             }
@@ -73,7 +74,7 @@
     </div>
       <div class="list-home">
         <?php
-          $queryasd = "SELECT * FROM Proposta WHERE Categoria = '$categorias' ORDER BY DataEffProposta ASC";
+          $queryasd = "SELECT * FROM Proposta WHERE Categoria = '$categorias' ORDER BY DataEffProposta DESC";
           $response = mysql_query($queryasd);
           while($row = mysql_fetch_assoc($response)){
             echo '<div class="list-item">
